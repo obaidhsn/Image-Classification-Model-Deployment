@@ -11,7 +11,6 @@ image_files = ["n01440764_tench.JPEG", "n01667114_mud_turtle.JPEG"]
 for image_file in image_files:
     image = image_processor.preprocess(image_file)
     pred_class_id = onnx_model.predict(image)
-    pred_class_id = 8
 
     # Print the predicted class ID
     print(f"{image_file} belongs to class id {pred_class_id}")
