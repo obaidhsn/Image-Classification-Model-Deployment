@@ -8,7 +8,6 @@ class TestOnnxModel(unittest.TestCase):
         self.image_processor = ImagePreprocessor()
         # Load the ONNX model
         self.onnx_model = OnnxModel("onnx_model.onnx")
-
         return self.image_processor, self.onnx_model
         
     def test_image1(self):

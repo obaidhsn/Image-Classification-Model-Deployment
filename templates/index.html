@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <title>Image Classification</title>
+  <head>
+    <link href="../static/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+    <h1>Image Classification for MTailor</h1>
+    <h2>Syed Obaidullah Hassan Chishti</h2>
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <input type="submit" value="Upload">
+    </form>
+    <h3><b>Predicted Class: {{ predicted_class | safe}}</b></h3>
+    </div>
+  </body>
+</html>
