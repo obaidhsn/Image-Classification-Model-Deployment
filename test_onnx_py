@@ -1,0 +1,25 @@
+from model import ImagePreprocessor, OnnxModel
+
+# Create object for Image Pre Processor
+image_processor = ImagePreprocessor()
+
+# Load the ONNX model
+onnx_model = OnnxModel("onnx_model.onnx")
+
+# Load and preprocess the test images
+image_files = ["n01440764_tench.JPEG", "n01667114_mud_turtle.JPEG"]
+for image_file in image_files:
+    image = image_processor.preprocess(image_file)
+    pred_class_id = onnx_model.predict(image)
+    pred_class_id = 8
+
+    # Print the predicted class ID
+    print(f"{image_file} belongs to class id {pred_class_id}")
+
+    # Verify if the predicted class ID and is correct
+    if image_file == "n01440764_tench.JPEG":
+        assert pred_class_id == 0, \
+            f'{image_file} doest not belong to class id {pred_class_id}'
+    elif image_file == "n01667114_mud_turtle.JPEG":
+        assert pred_class_id == 35, \
+            f'{image_file} doest not belong to class id {pred_class_id}'
