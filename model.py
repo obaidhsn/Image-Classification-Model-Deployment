@@ -21,7 +21,7 @@ class ImagePreprocessor:
 class OnnxModel:
     def __init__(self, onnx_path):
         self.session = onnxruntime.InferenceSession(onnx_path)
-    
+
     def predict(self, input_data):
         input_name = self.session.get_inputs()[0].name
         output_name = self.session.get_outputs()[0].name
