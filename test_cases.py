@@ -13,21 +13,21 @@ class TestOnnxModel(unittest.TestCase):
         
     def test_image1(self):
         # Test with image1
-        image_path = "n01440764_10218.JPEG"
+        image_path = "images/n01440764_10218.JPEG"
         expected_class = 0
         result = self._classify_image(image_path)
         self.assertEqual(result, expected_class)
     
     def test_image2(self):
         # Test with image2
-        image_path = "n01514859_10074.JPEG"
+        image_path = "images/n01514859_10074.JPEG"
         expected_class = 8
         result = self._classify_image(image_path)
         self.assertEqual(result, expected_class)
     
     def test_image3(self):
         # Test with image3
-        image_path = "n01558993_10351.JPEG"
+        image_path = "images/n01558993_10351.JPEG"
         expected_class = 15
         result = self._classify_image(image_path)
         self.assertEqual(result, expected_class)
